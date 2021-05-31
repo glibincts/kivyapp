@@ -1,13 +1,16 @@
 from kivymd.app import MDApp
-from kivymd.uix.label import MDLabel, MDIcon
+from kivymd.uix.screen import Screen
+from kivymd.uix.button import MDFlatButton, MDRectangleFlatButton, MDIconButton, MDFloatingActionButton
+
 
 class DemoApp(MDApp):
     def build(self):
-        label = MDLabel(text= 'Hello world', halign='center', theme_text_color='Custom', text_color=(0,1,0,1),
-                        font_style='H1')
+        screen = Screen()
+        btn_flat = MDRectangleFlatButton(text='Submit', pos_hint={'center_x': 0.5, 'center_y': 0.5})
+        screen.add_widget(btn_flat)
 
-        icon_label = MDIcon(icon='language-python', halign='center')
-        return  icon_label
+        icon_btn = MDFloatingActionButton(icon='language-python', pos_hint={'center_x': 0.5, 'center_y': 0.5})
+        return  icon_btn
 
 
 DemoApp().run()
